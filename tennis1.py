@@ -29,13 +29,9 @@ class TennisGame1:
         return self.general_case_scoring()
 
     def general_case_scoring(self):
-        player1_text = self.convert_to_text(self.p1points)
-        player2_text = self.convert_to_text(self.p2points)
+        player1_text = TennisGame1.POINTS_TO_TEXT_DICTIONARY[self.p1points]
+        player2_text = TennisGame1.POINTS_TO_TEXT_DICTIONARY[self.p2points]
         return f"{player1_text}-{player2_text}"
-
-    @staticmethod
-    def convert_to_text(point):
-        return TennisGame1.POINTS_TO_TEXT_DICTIONARY[point]
 
     def tiebreak_scoring(self):
         points_difference = self.p1points - self.p2points
