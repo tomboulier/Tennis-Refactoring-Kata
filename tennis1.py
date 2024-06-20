@@ -15,24 +15,24 @@ class TennisGame1:
             self.p2points += 1
 
     def score(self):
-        result = ""
         if self.p1points == self.p2points:
-            result = self.equality_scoring(self.p1points)
-        elif self.p1points >= 4 or self.p2points >= 4:
-            result = self.tiebreak_scoring()
-        else:
-            for i in range(1, 3):
-                if i == 1:
-                    tempScore = self.p1points
-                else:
-                    result += "-"
-                    tempScore = self.p2points
-                result += {
-                    0: "Love",
-                    1: "Fifteen",
-                    2: "Thirty",
-                    3: "Forty",
-                }[tempScore]
+            return self.equality_scoring(self.p1points)
+        if self.p1points >= 4 or self.p2points >= 4:
+            return self.tiebreak_scoring()
+
+        result = ""
+        for i in range(1, 3):
+            if i == 1:
+                tempScore = self.p1points
+            else:
+                result += "-"
+                tempScore = self.p2points
+            result += {
+                0: "Love",
+                1: "Fifteen",
+                2: "Thirty",
+                3: "Forty",
+            }[tempScore]
         return result
 
     def tiebreak_scoring(self):
