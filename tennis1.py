@@ -10,18 +10,18 @@ class TennisGame1:
         A dictionary to map points to their textual representation.
     EQUALITY_SCORING_TEXT : dict
         A dictionary to map points to their textual representation when scores are equal.
-    player1Name : str
+    player1_name : str
         The name of the first player.
-    player2Name : str
+    player2_name : str
         The name of the second player.
-    p1points : int
+    player1_points : int
         The points of the first player.
-    p2points : int
+    player2_points : int
         The points of the second player.
 
     Methods
     -------
-    won_point(playerName)
+    won_point(player_name)
         Increases the points of the specified player.
     score()
         Returns the current score as a string.
@@ -45,25 +45,25 @@ class TennisGame1:
         4: "Deuce",
     }
 
-    def __init__(self, player1Name, player2Name):
-        self.player1Name = player1Name
-        self.player2Name = player2Name
-        self.p1points = 0
-        self.p2points = 0
+    def __init__(self, player1_name, player2_name):
+        self.player1_name = player1_name
+        self.player2_name = player2_name
+        self.player1_points = 0
+        self.player2_points = 0
 
-    def won_point(self, playerName):
+    def won_point(self, player_name):
         """
         Increases the points of the specified player.
 
         Parameters
         ----------
-        playerName : str
+        player_name : str
             The name of the player who won the point.
         """
-        if playerName == self.player1Name:
-            self.p1points += 1
+        if player_name == self.player1_name:
+            self.player1_points += 1
         else:
-            self.p2points += 1
+            self.player2_points += 1
 
     def score(self):
         """
@@ -74,9 +74,9 @@ class TennisGame1:
         str
             The current score.
         """
-        if self.p1points == self.p2points:
-            return TennisGame1.EQUALITY_SCORING_TEXT[self.p1points]
-        if self.p1points >= 4 or self.p2points >= 4:
+        if self.player1_points == self.player2_points:
+            return TennisGame1.EQUALITY_SCORING_TEXT[self.player1_points]
+        if self.player1_points >= 4 or self.player2_points >= 4:
             return self.tiebreak_scoring()
 
         return self.general_case_scoring()
@@ -90,8 +90,8 @@ class TennisGame1:
         str
             The score for the general case.
         """
-        player1_text = TennisGame1.POINTS_TO_TEXT_DICTIONARY[self.p1points]
-        player2_text = TennisGame1.POINTS_TO_TEXT_DICTIONARY[self.p2points]
+        player1_text = TennisGame1.POINTS_TO_TEXT_DICTIONARY[self.player1_points]
+        player2_text = TennisGame1.POINTS_TO_TEXT_DICTIONARY[self.player2_points]
         return f"{player1_text}-{player2_text}"
 
     def tiebreak_scoring(self):
@@ -103,7 +103,7 @@ class TennisGame1:
         str
             The score for the tiebreak case.
         """
-        points_difference = self.p1points - self.p2points
+        points_difference = self.player1_points - self.player2_points
         if points_difference == 1:
             score = "Advantage player1"
         elif points_difference == -1:
