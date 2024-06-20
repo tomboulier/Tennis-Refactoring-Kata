@@ -28,13 +28,13 @@ class TennisGame1:
         return f"{player1_text}-{player2_text}"
 
     @staticmethod
-    def convert_to_text(temporary_score):
+    def convert_to_text(point):
         return {
             0: "Love",
             1: "Fifteen",
             2: "Thirty",
             3: "Forty",
-        }[temporary_score]
+        }[point]
 
     def tiebreak_scoring(self):
         points_difference = self.p1points - self.p2points
