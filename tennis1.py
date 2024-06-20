@@ -20,20 +20,16 @@ class TennisGame1:
         if self.p1points >= 4 or self.p2points >= 4:
             return self.tiebreak_scoring()
 
-        score = ""
-        for i in range(1, 3):
-            if i == 1:
-                temporary_score = self.p1points
-            else:
-                score += "-"
-                temporary_score = self.p2points
-            score += {
-                0: "Love",
-                1: "Fifteen",
-                2: "Thirty",
-                3: "Forty",
-            }[temporary_score]
-        return score
+        return f"{self.convert_to_text(self.p1points)}-{self.convert_to_text(self.p2points)}"
+
+    @staticmethod
+    def convert_to_text(temporary_score):
+        return {
+            0: "Love",
+            1: "Fifteen",
+            2: "Thirty",
+            3: "Forty",
+        }[temporary_score]
 
     def tiebreak_scoring(self):
         points_difference = self.p1points - self.p2points
