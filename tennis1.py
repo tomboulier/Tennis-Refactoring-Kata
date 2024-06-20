@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 
 class TennisGame1:
+    POINTS_TO_TEXT_DICTIONARY = {
+        0: "Love",
+        1: "Fifteen",
+        2: "Thirty",
+        3: "Forty",
+    }
 
     def __init__(self, player1Name, player2Name):
         self.player1Name = player1Name
@@ -29,12 +35,7 @@ class TennisGame1:
 
     @staticmethod
     def convert_to_text(point):
-        return {
-            0: "Love",
-            1: "Fifteen",
-            2: "Thirty",
-            3: "Forty",
-        }[point]
+        return TennisGame1.POINTS_TO_TEXT_DICTIONARY[point]
 
     def tiebreak_scoring(self):
         points_difference = self.p1points - self.p2points
