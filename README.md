@@ -31,4 +31,13 @@ Here is a description of the problem this code is designed to solve: [Tennis Kat
 * What would you say to your boss about the value of this refactoring work? Was there more reason to do it over and above the extra billable hour or so?
 
 ## Code Reading Practice
-Test your code reading skills. Here is a description of what to do: [Scanning for Code Smells](https://sammancoaching.org/exercises/code_reading.html). There are suitable lists of urls to open in some of the language subdirectories.
+Test your code reading skills. Here is a description of what to do: [Scanning for Code Smells](https://sammancoaching.org/exercises/code_reading.html).
+
+Here is a list of github urls of all the TennisGame Python modules:
+
+* https://github.com/emilybache/Tennis-Refactoring-Kata/blob/main/python/tennis1.py
+* https://github.com/emilybache/Tennis-Refactoring-Kata/blob/main/python/tennis2.py
+* https://github.com/emilybache/Tennis-Refactoring-Kata/blob/main/python/tennis3.py
+* https://github.com/emilybache/Tennis-Refactoring-Kata/blob/main/python/tennis4.py
+* https://github.com/emilybache/Tennis-Refactoring-Kata/blob/main/python/tennis5.py
+* https://github.com/emilybache/Tennis-Refactoring-Kata/blob/main/python/tennis6.py
