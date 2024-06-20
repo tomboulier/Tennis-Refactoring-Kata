@@ -8,6 +8,14 @@ class TennisGame1:
         3: "Forty",
     }
 
+    EQUALITY_SCORING_TEXT = {
+        0: "Love-All",
+        1: "Fifteen-All",
+        2: "Thirty-All",
+        3: "Deuce",
+        4: "Deuce",
+    }
+
     def __init__(self, player1Name, player2Name):
         self.player1Name = player1Name
         self.player2Name = player2Name
@@ -22,7 +30,7 @@ class TennisGame1:
 
     def score(self):
         if self.p1points == self.p2points:
-            return self.equality_scoring(self.p1points)
+            return TennisGame1.EQUALITY_SCORING_TEXT[self.p1points]
         if self.p1points >= 4 or self.p2points >= 4:
             return self.tiebreak_scoring()
 
@@ -44,11 +52,3 @@ class TennisGame1:
         else:
             score = "Win for player2"
         return score
-
-    @staticmethod
-    def equality_scoring(points):
-        return {
-            0: "Love-All",
-            1: "Fifteen-All",
-            2: "Thirty-All",
-        }.get(points, "Deuce")
