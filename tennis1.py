@@ -20,7 +20,12 @@ class TennisGame1:
         if self.p1points >= 4 or self.p2points >= 4:
             return self.tiebreak_scoring()
 
-        return f"{self.convert_to_text(self.p1points)}-{self.convert_to_text(self.p2points)}"
+        return self.general_case_scoring()
+
+    def general_case_scoring(self):
+        player1_text = self.convert_to_text(self.p1points)
+        player2_text = self.convert_to_text(self.p2points)
+        return f"{player1_text}-{player2_text}"
 
     @staticmethod
     def convert_to_text(temporary_score):
